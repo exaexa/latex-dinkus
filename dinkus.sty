@@ -1,0 +1,21 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{dinkus}
+  [2022/10/23 v0.01 A little package for simple typesetting of dinkuses, asterisms, and similar fun text flow separators.]
+
+\newcommand{\textbreaktopskip}{\nopagebreak\vskip 1em plus 1em}
+\newcommand{\textbreakbottomskip}{\vskip 1em plus 10em}
+
+\newcommand{\textbreak}[1]{\par\textbreaktopskip\begingroup%
+  \noindent#1\par%
+  \endgroup\textbreakbottomskip}
+\newcommand{\centerbreak}[1]{\textbreak{\centering#1}}
+
+\newcommand{\thedinkus}{\textasteriskcentered~\textasteriskcentered~\textasteriskcentered}
+\newcommand{\dinkus}{\centerbreak{\thedinkus}}
+
+\newcommand{\asterismlinesmash}{-1.5ex}
+\newcommand{\theasterism}{\textasteriskcentered\\[\asterismlinesmash]%
+  \textasteriskcentered~\textasteriskcentered}
+\newcommand{\asterism}{\centerbreak{\theasterism}}
+
+\endinput
